@@ -163,22 +163,20 @@ public class WetterstationGUI extends javax.swing.JFrame {
     private void SetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SetActionPerformed
         double temp = Double.parseDouble(JOptionPane.showInputDialog("Input new temperature: "));
         Station s = (Station) model.getValueAt(taOutput.getSelectedRow(), 0);
-        if (!(temp < -35 || temp > 45)) {
+        try {
             s.setTemp(temp);
-            model.fireTableDataChanged();
-        } else {
-            JOptionPane.showMessageDialog(null, "Please input a valid temperature!");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_SetActionPerformed
 
     private void Set2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Set2ActionPerformed
         int hum = Integer.parseInt(JOptionPane.showInputDialog("Input new humidity: "));
         Station s = (Station) model.getValueAt(taOutput.getSelectedRow(), 0);
-        if (!(hum < 0 || hum > 100)) {
+        try {
             s.setHum(hum);
-            model.fireTableDataChanged();
-        } else {
-            JOptionPane.showMessageDialog(null, "Please input a valid humidity!");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_Set2ActionPerformed
 

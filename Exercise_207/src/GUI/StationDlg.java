@@ -1,6 +1,8 @@
 package GUI;
 
 import BL.Station;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class StationDlg extends javax.swing.JDialog {
@@ -119,12 +121,12 @@ public class StationDlg extends javax.swing.JDialog {
         double temp = Double.parseDouble(tfTemp.getText());
         int hum = Integer.parseInt(tfHum.getText());
         
-        if(!(temp < -35 || temp > 45)&& !(hum < 0 || hum > 100)){
+        try {
             station = new Station(place,level,temp,hum);
             ok = true;
             this.dispose();
-        }else{
-            JOptionPane.showMessageDialog(null, "Please input valid information!");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_btOkActionPerformed
 

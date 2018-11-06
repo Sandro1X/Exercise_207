@@ -9,11 +9,16 @@ public class Station implements Comparable, Serializable{
     private double temp;
     private int hum;
 
-    public Station(String place, int level, double temp, int hum) {
-        this.place = place;
-        this.level = level;
-        this.temp = temp;
-        this.hum = hum;
+    public Station(String place, int level, double temp, int hum) throws Exception {
+        if(!(temp < -35 || temp > 45)&& !(hum < 0 || hum > 100)){
+            this.place = place;
+            this.level = level;
+            this.temp = temp;
+            this.hum = hum;
+        }else{
+            throw new Exception("Please input valid information!");
+        }
+        
     }
 
     public String getPlace() {
@@ -40,12 +45,20 @@ public class Station implements Comparable, Serializable{
         this.level = level;
     }
 
-    public void setTemp(double temp) {
-        this.temp = temp;
+    public void setTemp(double temp) throws Exception {
+        if (!(temp < -35 || temp > 45)) {
+            this.temp = temp;
+        }else{
+            throw new Exception("Please input a valid temperature!");
+        }
     }
 
-    public void setHum(int hum) {
-        this.hum = hum;
+    public void setHum(int hum) throws Exception {
+        if (!(hum < 0 || hum > 100)) {
+            this.hum = hum;
+        }else{
+            throw new Exception("Please input a valid humidity!");
+        }
     }
 
     @Override
