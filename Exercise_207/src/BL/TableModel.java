@@ -12,9 +12,13 @@ public class TableModel extends AbstractTableModel{
         fireTableRowsInserted(stations.size()-1, stations.size()-1);
     }
     
-    public void remove(Station s){
-        stations.remove(s);
-        fireTableRowsDeleted(0, stations.size()-1);
+    public void remove(int i){
+        stations.remove(i);
+        fireTableDataChanged();
+    }
+
+    public ArrayList<Station> getStations() {
+        return stations;
     }
     
     @Override

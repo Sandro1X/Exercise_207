@@ -26,11 +26,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add Weather Station"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="Remove">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Remove Weather Station"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoveActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
