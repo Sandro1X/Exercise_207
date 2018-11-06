@@ -1,3 +1,5 @@
+package GUI;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -57,7 +59,7 @@ public class WetterstationGUI extends javax.swing.JFrame {
         taOutput.setComponentPopupMenu(jPopupMenu1);
         jScrollPane1.setViewportView(taOutput);
 
-        jMenu1.setText("File");
+        jMenu1.setText("Staions");
 
         Add.setText("Add Weather Station");
         jMenu1.add(Add);
@@ -67,12 +69,12 @@ public class WetterstationGUI extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Values");
 
-        Set.setText("SetTemp");
+        Set.setText("Set Temperature");
         jMenu2.add(Set);
 
-        Set2.setText("SetHum");
+        Set2.setText("Set Humidity");
         jMenu2.add(Set2);
 
         jMenuBar1.add(jMenu2);
