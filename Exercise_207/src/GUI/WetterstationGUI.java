@@ -15,16 +15,16 @@ public class WetterstationGUI extends javax.swing.JFrame {
     private TableModel model = new TableModel();
     private TableRenderer rend = new TableRenderer();
     private File file = new File("src\\data.bin");
-    
+
     public WetterstationGUI() throws IOException, FileNotFoundException, ClassNotFoundException {
         initComponents();
         taOutput.setModel(model);
         taOutput.setDefaultRenderer(Object.class, rend);
         taOutput.setShowGrid(true);
-        
-        try{
+
+        try {
             model.load(file);
-        }catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Load error!");
         }
     }
@@ -181,9 +181,9 @@ public class WetterstationGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_Set2ActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        try{
+        try {
             model.safe(file);
-        }catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Safe error!");
         }
     }//GEN-LAST:event_formWindowClosing

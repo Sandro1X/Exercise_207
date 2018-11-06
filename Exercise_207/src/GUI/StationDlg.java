@@ -6,9 +6,10 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class StationDlg extends javax.swing.JDialog {
+
     private boolean ok;
     private Station station;
-    
+
     public StationDlg(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -21,7 +22,7 @@ public class StationDlg extends javax.swing.JDialog {
     public Station getStation() {
         return station;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -120,9 +121,9 @@ public class StationDlg extends javax.swing.JDialog {
         int level = Integer.parseInt(tfLevel.getText());
         double temp = Double.parseDouble(tfTemp.getText());
         int hum = Integer.parseInt(tfHum.getText());
-        
+
         try {
-            station = new Station(place,level,temp,hum);
+            station = new Station(place, level, temp, hum);
             ok = true;
             this.dispose();
         } catch (Exception ex) {

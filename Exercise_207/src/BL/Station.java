@@ -2,23 +2,20 @@ package BL;
 
 import java.io.Serializable;
 
-public class Station implements Comparable, Serializable{
-    
+public class Station implements Comparable, Serializable {
+
     private String place;
     private int level;
     private double temp;
     private int hum;
 
     public Station(String place, int level, double temp, int hum) throws Exception {
-        if(!(temp < -35 || temp > 45)&& !(hum < 0 || hum > 100)){
             this.place = place;
             this.level = level;
-            this.temp = temp;
-            this.hum = hum;
-        }else{
-            throw new Exception("Please input valid information!");
-        }
-        
+            setTemp(temp);
+            setHum(hum);
+
+
     }
 
     public String getPlace() {
@@ -48,7 +45,7 @@ public class Station implements Comparable, Serializable{
     public void setTemp(double temp) throws Exception {
         if (!(temp < -35 || temp > 45)) {
             this.temp = temp;
-        }else{
+        } else {
             throw new Exception("Please input a valid temperature!");
         }
     }
@@ -56,7 +53,7 @@ public class Station implements Comparable, Serializable{
     public void setHum(int hum) throws Exception {
         if (!(hum < 0 || hum > 100)) {
             this.hum = hum;
-        }else{
+        } else {
             throw new Exception("Please input a valid humidity!");
         }
     }
