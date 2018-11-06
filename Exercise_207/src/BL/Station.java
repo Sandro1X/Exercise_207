@@ -1,6 +1,9 @@
 package BL;
 
-public class Station {
+import java.io.Serializable;
+
+public class Station implements Comparable, Serializable{
+    
     private String place;
     private int level;
     private double temp;
@@ -43,5 +46,11 @@ public class Station {
 
     public void setHum(int hum) {
         this.hum = hum;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        Station s = (Station) o;
+        return this.place.toLowerCase().compareTo(s.place.toLowerCase());
     }
 }
